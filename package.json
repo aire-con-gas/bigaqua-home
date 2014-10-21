@@ -11,5 +11,10 @@
   "dependencies": {
     "express": "^4.9.6",
     "express3-handlebars": "^0.5.2"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "express3-handlebars": "^0.5.2",
+    "mocha": "^1.21.5"
   }
 }

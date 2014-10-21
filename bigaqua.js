@@ -10,6 +10,13 @@ app.set('port', process.env.PORT || 3001);
 
 app.use(express.static(__dirname + '/public'));
 
+app.use(function(req, res, next) {
+  console.log("env:", app.get('env'));
+  console.log("query test:", req.query.test);
+  res.locals.showTests = app.get('env') !== 'production' && req.query.test === 1;
+  next();
+});
+
 app.get('/', function(req, res) {
   res.render('home', {qotd: Quote.getQuote()});
 });
